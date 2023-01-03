@@ -22,7 +22,7 @@ def upload_image():
     image_file.save(os.path.join('static/',filename))
     image = Image.open(image_file)
     image.thumbnail((width, height))
-    image.open(os.path.join('static/',filename))
+    image.save(os.path.join('static/',filename))
     return render_template('upload.html',filename = filename)
 
 @app.route('/display/<filename>')
